@@ -1,4 +1,3 @@
-cat > README.md << 'EOF'
 # arch-vnc-wine
 
 A minimal Arch Linux container with VNC, Fluxbox, and Wine.  
