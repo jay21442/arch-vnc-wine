@@ -1,0 +1,11 @@
+# docker-compose.yml
+services:
+  arch-vnc-wine:
+    build: .
+    container_name: arch-vnc-wine
+    ports:
+      - "5900:5900"   # VNC port
+    environment:
+      - DISPLAY=:0
+    volumes:
+      - ./data:/home/vncuser/data
