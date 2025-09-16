@@ -1,3 +1,4 @@
+cat > README.md << 'EOF'
 # arch-vnc-wine
 
 A minimal Arch Linux container with VNC, Fluxbox, and Wine.  
@@ -50,4 +51,4 @@ Default window manager: Fluxbox
 
 ## License
 This project is licensed under the MIT License (LICENSE).
-
+EOF
