@@ -53,9 +53,3 @@ Designed as a functional base; extend it for specific apps (e.g. games, tools)
 📜 License
 This project is licensed under the MIT License (LICENSE).
 
-yaml
-Copy code
-
----
-
-Do you want me to also include a **git command block** (all-in-one) that stages, commits, and pushes this updated
