@@ -53,3 +53,6 @@ Designed as a functional base; extend it for specific apps (e.g. games, tools)
 📜 License
 This project is licensed under the MIT License (LICENSE).
 
+## 🙌 Acknowledgements
+- Built by **jay21442**
+- With assistance from **ChatGPT (OpenAI)**
