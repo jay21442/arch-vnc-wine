@@ -1,53 +1,61 @@
 # arch-vnc-wine
+An Arch Linux container with **VNC remote desktop, XFCE, and Wine**. This setup provides a lightweight but complete desktop environment for running Windows applications inside Docker, accessible over VNC.
 
-A minimal Arch Linux container with VNC, Fluxbox, and Wine.  
-This setup is useful for running Windows applications in a lightweight virtualized environment with VNC remote access.
+## ✨ Features
+- Based on **Arch Linux (latest)**
+- **Wine Staging** for running Windows applications
+- Full **XFCE desktop environment** (panel, menu, file manager, terminal)
+- **Xvfb + x11vnc** for headless VNC access
+- **Non-root user (fsuser)** for security
+- Easy to extend with additional tools or Windows apps
 
-## Features
-- Based on Arch Linux (latest)
-- Wine Staging for running Windows applications
-- Fluxbox window manager
-- Xvfb + x11vnc for headless VNC access
-- Easy-to-extend with additional tools
+## 🚀 Usage
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/jay21442/arch-vnc-wine.git
+   cd arch-vnc-wine
+Build and start with Docker Compose
 
-## Usage
-
-### 1. Clone the repository
-git clone https://github.com/jay21442/arch-vnc-wine.git
-cd arch-vnc-wine
-
-### 2. Build and start with Docker Compose
+bash
+Copy code
 docker compose up -d --build
-
 The container will start a VNC server on port 5900.
 
-## Volumes
+📂 Volumes
+Two directories can be mounted into the container:
 
-Two directories are mounted into the container:
+./installer → /home/fsuser/installer (place Windows installers here)
 
-- ./installer → /home/fsuser/installer  
-  Place installers for Windows applications here.
-
-- ./dlc → /home/fsuser/dlc  
-  Useful for game data, mods, or other external files.
+./dlc → /home/fsuser/dlc (useful for game data, mods, or other external files)
 
 To create them:
+
+bash
+Copy code
 mkdir installer dlc
+These directories will appear inside the container under /home/fsuser/.
 
-These directories will be available inside the container under /home/fsuser/.
-
-## Connect via VNC
-
+🔑 Connect via VNC
 Use any VNC client and connect to:
+
+makefile
+Copy code
 localhost:5900
+Default desktop: XFCE (includes menu, terminal, file manager).
 
-Default window manager: Fluxbox
+🛠 Development Notes
+Runs as non-root user: fsuser
 
-## Development Notes
-- The container runs as a non-root user (fsuser)
-- start-vnc.sh handles the Xvfb, Fluxbox, and VNC startup
-- Designed as a minimal base; extend it for specific applications
+start-vnc.sh handles Xvfb, dbus, XFCE, and VNC startup
 
-## License
+Designed as a functional base; extend it for specific apps (e.g. games, tools)
+
+📜 License
 This project is licensed under the MIT License (LICENSE).
-EOF
+
+yaml
+Copy code
+
+---
+
+Do you want me to also include a **git command block** (all-in-one) that stages, commits, and pushes this updated

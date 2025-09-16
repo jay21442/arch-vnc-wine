@@ -1,11 +1,13 @@
-# docker-compose.yml
+version: "3.8"
+
 services:
   arch-vnc-wine:
     build: .
     container_name: arch-vnc-wine
     ports:
-      - "5900:5900"   # VNC port
-    environment:
-      - DISPLAY=:0
+      - "5900:5900"   # VNC access
     volumes:
-      - ./data:/home/vncuser/data
+      - ./installer:/home/fsuser/installer
+      - ./dlc:/home/fsuser/dlc
+    restart: unless-stopped
+
