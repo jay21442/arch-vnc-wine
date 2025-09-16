@@ -1,4 +1,3 @@
-
 FROM archlinux:latest
 
 # Install dependencies
